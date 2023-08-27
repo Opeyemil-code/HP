@@ -8,28 +8,44 @@ import React from 'react'
 
 
 
-function Contain(props) {
+export default function Contain(props) {
 
    const [toggle, settoggle] = React.useState(false)
- 
    
-
+   function ToggleDark(params) {
+      settoggle(prev => !prev)
+   }
+   
    return(
-      <section className='bg-blac pt-2 pb-72'>
-      <div className=''>
-        <NavBar 
-        toggle={toggle}
-       />
+      <div>
+          {
+            toggle ? <div className='bg-white text-black '>
+            <NavBar 
+            toggle={toggle}
+            ToggleDark={ToggleDark}
+           />
+  
+           <Content 
+           toggle={toggle}
+           ToggleDark={ToggleDark}
+           />
+          </div> : <div className='bg-black text-white '>
+          <NavBar 
+          toggle={toggle}
+          ToggleDark={ToggleDark}
+         />
 
-       <Content 
-       toggle={toggle}
-       />
+         <Content 
+         toggle={toggle}
+         ToggleDark={ToggleDark}
+         />
+        </div>
+          }
       </div>
-      </section>
    )
 }
 
-export default Contain
+
 
 
 
