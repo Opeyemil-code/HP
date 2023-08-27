@@ -14,7 +14,7 @@ export default function Content(params) {
     )
 
     return(
-        <div>{multiplejoke}</div>
+        <div className="">{multiplejoke}</div>
     )
 }
     

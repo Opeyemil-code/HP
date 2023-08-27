@@ -4,15 +4,28 @@ import './App.css'
 import NavBar from './component/navbar'
 import Content from './component/content'
 import './index.css'
+import React from 'react'
 
 
 
-function Contain(params) {
+function Contain(props) {
+
+   const [toggle, settoggle] = React.useState(false)
+ 
+   
+
    return(
+      <section className='bg-blac pt-2 pb-72'>
       <div className=''>
-        <NavBar/>
-       <Content/>
+        <NavBar 
+        toggle={toggle}
+       />
+
+       <Content 
+       toggle={toggle}
+       />
       </div>
+      </section>
    )
 }
 
